@@ -83,11 +83,11 @@ public class Stack {
 //            }
 //        }
 //
-//        while(!isEmpty()){
-//            postfix.append(pop());
-//        }
+        while(!isEmpty()){
+            postfix.append(pop());
+        }
 //
-//    }
+    }
 
 
     public int getPriority(String operator){
@@ -100,9 +100,9 @@ public class Stack {
     }
 
     public boolean hasHigherPriority(String in){
-        int topOperator = getPriority(String.valueOf(topOfStack()));
-            return topOfStack() <= Integer.parseInt(in);
-
+        int operatorOfStack = getPriority(topOfStack());
+        int operatorOfExpression = getPriority(in);
+            return operatorOfExpression <= operatorOfStack;
     }
 
     public boolean isOpeningBracket(String input){
